@@ -1,0 +1,35 @@
+package solutions;
+
+public class Problem1 {
+
+	public double calculate(double a, double b, String type) {
+		type = type.toLowerCase();
+		if (type.equals("add")) {
+			return a + b;
+		} else if (type.equals("sub")) {
+			return a - b;
+		} else if (type.equals("mul")) {
+			return a * b;
+		} else if (type.equals("div")) {
+			if (b == 0) {
+				System.out.println("Division by zero is not possible..");
+				return 0;
+			}
+			return a / b;
+		} else {
+			System.out.println("Invalid operation...");
+			return 0;
+		}
+	}
+
+	public static void main(String[] args) {
+		Problem1 calci = new Problem1();
+		System.out.println(calci.calculate(1, 2, "add"));
+		System.out.println(calci.calculate(7, 2, "sub"));
+		System.out.println(calci.calculate(2, 2, "mul"));
+		System.out.println(calci.calculate(10, 2, "div"));
+		System.out.println(calci.calculate(10, 0, "div"));
+		System.out.println(calci.calculate(10, 5, "mod"));
+
+	}
+}
